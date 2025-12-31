@@ -9,20 +9,24 @@ def enter_data():
         #user infor 
         firstname = first_name_entry.get()
         lastname = last_name_entry.get()
-        title = title_combobox.get()
-        age = age_spinbox.get()
-        nationality = nationality_combobox.get()
 
-        #course Info 
-        registration_status = reg_status_var.get()
-        numcourses = numcourses_spinbox.get()
-        numsemesters = numsemeter_spinbox.get()
+        if firstname and lastname:
+            title = title_combobox.get()
+            age = age_spinbox.get()
+            nationality = nationality_combobox.get()
 
-        print("First name: ", firstname, "Last name: ", lastname)
-        print("Title: ", title, "Age: ", age, "Nationality: ", nationality)
-        print("# Courses: ", numcourses, "# Semesters: ", numsemesters)
-        print("Registration Status: ", registration_status)
-        print("---------------------------------------------------------")
+            #course Info 
+            registration_status = reg_status_var.get()
+            numcourses = numcourses_spinbox.get()
+            numsemesters = numsemeter_spinbox.get()
+
+            print("First name: ", firstname, "Last name: ", lastname)
+            print("Title: ", title, "Age: ", age, "Nationality: ", nationality)
+            print("# Courses: ", numcourses, "# Semesters: ", numsemesters)
+            print("Registration Status: ", registration_status)
+            print("---------------------------------------------------------")
+        else:
+            tkinter.messagebox.showwarning(title="Error", message="First name and Last name are required")
     else:
         tkinter.messagebox.showwarning(title="Error", message="You have not accepted the terms")
 
